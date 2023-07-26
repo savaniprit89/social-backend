@@ -3,7 +3,7 @@ const postCtrl=require('../controllers/postCtrl');
 const auth = require('../middleware/auth');
 router.route('/posts')
     .post(auth, postCtrl.createPost)
-    .get(auth,postCtrl.getPost)
+    .get(postCtrl.getPost)
 
 router.route('/posts/:id')
     .patch(auth, postCtrl.updatePost)
