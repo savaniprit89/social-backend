@@ -36,6 +36,7 @@ const postCtrl = {
     },
     getPost: async (req,res)=>{
         try {
+            console.log(req.user)
             const features= new APIFeatures(Posts.find({
                 user:[...req.user.following,req.user._id]
             }),req.query).paginating();
