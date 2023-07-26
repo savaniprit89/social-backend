@@ -20,7 +20,12 @@ dotenv.config();
 //const URI = 'mongodb+srv://PRIT:prit@cluster0.musona2.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose
-  .connect(process.env.MURI)
+  .connect(process.env.MURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+ })
   .then(() => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);
