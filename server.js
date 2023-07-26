@@ -17,9 +17,10 @@ app.use(cors())
 app.use(cookieParser())
 dotenv.config();
 
-const URI = 'mongodb+srv://PRIT:prit@cluster0.musona2.mongodb.net/?retryWrites=true&w=majority'
+//const URI = 'mongodb+srv://PRIT:prit@cluster0.musona2.mongodb.net/?retryWrites=true&w=majority'
+
 mongoose
-  .connect(URI)
+  .connect(process.env.MURI)
   .then(() => console.log("DB Connection Successfull!"))
   .catch((err) => {
     console.log(err);
